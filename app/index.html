@@ -1,44 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">  
+<html ng-app="myApp" lang="en">  
   <head>    
     <meta charset="utf-8">    
     <title>SingPath - The Most Fun Way to Practice Software
     </title>      
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>	
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> 
     <meta name="description" content="">    
     <meta name="author" content="">    
-    <!-- Le styles -->    
+    <!-- Le styles -->
     <link href="../assets/css/bootstrap.css" rel="stylesheet">    
-    <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">    
+    <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">  
+    <link href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css" rel="stylesheet">
+    <link href="http://code.jquery.com/ui/1.10.0/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <link href="./lib/fancybox/jquery.fancybox.css" rel="stylesheet">
+
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.0/jquery-ui.min.js"></script>
+    <script src="./js/fancybox-fire.js"></script>
+    
     <style>    /* GLOBAL STYLES     -------------------------------------------------
     /* GLOBAL STYLES
     -------------------------------------------------- */
     /* Padding below the footer and lighter body text */
-	html {-webkit-text-size-adjust: none;}
+  html {-webkit-text-size-adjust: none;}
     body{
-		background-image:url("../assets/img/bbg.jpg");
-		background-repeat:repeat;
-		background-attachment:fixed;
-		padding-bottom: 40px;
-		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-		color: white;
-
+      background-image:url("../assets/img/");
+      background-repeat:repeat;
+      background-attachment:fixed;
+      padding-bottom: 40px;
+      font-family: Helvetica Neue, Helvetica, Arial, "sans-serif";
+      color: black;
     }
     .img-polaroid{
       height:215px;
     }
     .well{
-
-      background-color: transparent;
+      background-color: #171718;
+      border-color: black;
     }
-	
-	.table td {
-   text-align: center;   
-	}
+    .table td {
+     text-align: center;   
+    }
 
-	.table th {
-   text-align: center;   
-	}
+    .table th {
+     text-align: center;   
+    }
     /* CUSTOMIZE THE NAVBAR
     -------------------------------------------------- */
 
@@ -49,7 +55,7 @@
       left: 0;
       right: 0;
       z-index: 10;
-      margin-top: 20px;
+      margin-top: 30px;
       margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
     }
     .navbar-wrapper .navbar {
@@ -82,8 +88,6 @@
       margin-top: 10px;
     }
 
-
-
     /* CUSTOMIZE THE NAVBAR
     -------------------------------------------------- */
 
@@ -95,15 +99,6 @@
     .carousel .container {
       position: relative;
       z-index: 5;
-    }
-
-    .carousel-control {
-      height: 55px;
-      margin-top: 0;
-      font-size: 120px;
-      text-shadow: 0 1px 1px rgba(0,0,0,.4);
-      background-color: grey;
-      border: 0;
     }
 
     .carousel .item {
@@ -135,7 +130,26 @@
       margin-top: 10px;
     }
 
-
+    .carousel-control {
+      position: absolute;
+      top: 40%;
+      left: 15px;
+      width: 40px;
+      height: 40px;
+      margin-top: -20px;
+      font-size: 60px;
+      font-weight: 100;
+      line-height: 30px;
+      color: #ffffff;
+      text-align: center;
+      background: gray0;
+      border: 3px solid black ;
+      -webkit-border-radius: 23px;
+         -moz-border-radius: 23px;
+              border-radius: 23px;
+      opacity: 0.5;
+      filter: alpha(opacity=50);
+    }
 
     /* MARKETING CONTENT
     -------------------------------------------------- */
@@ -143,6 +157,7 @@
     /* Center align the text within the three columns below the carousel */
     .marketing .span4 {
       text-align: center;
+      
     }
     .marketing h2 {
       font-weight: normal;
@@ -186,199 +201,219 @@
     #smallProfile,#smallSelectPlay,#mediumComment{
       display:none;
     }
-      #largeProfile,#largeSelectPlay,#largeComment{
-        display:block;
-      }
-		  	h6 {
-		font-size: 120%;
-	}
 
+    #largeProfile,#largeSelectPlay,#largeComment{
+      display:block;
+    }
+    h6 {
+      font-size: 120%;
+    }
 
-    /* RESPONSIVE CSS
-    -------------------------------------------------- */
-
-    @media (max-width: 1024px) {
-      
-      .navbar-wrapper {
-        position: absolute;
-        top: 40px;
-        }
-
-      .container.navbar-wrapper {
-        margin-top: 30px;
-        margin-bottom: 0;
-        width: auto;
-      }
-      .navbar-inner {
-        border-radius: 0;
-        margin: -20px 0;
+  /* RESPONSIVE CSS
+  -------------------------------------------------- */
+  @media (max-width: 1024px) {
+    
+    .navbar-wrapper {
+      position: absolute;
+      top: 40px;
       }
 
-      .carousel .item {
-        height: 100%;
-      }
-      .carousel img {
-        width: auto;
-        height: 100%;
-      }
+    .container.navbar-wrapper {
+      margin-top: 30px;
+      margin-bottom: 0;
+      width: auto;
+    }
+    .navbar-inner {
+      border-radius: 0;
+      margin: -20px 0;
+    }
 
-      .featurette {
-        height: auto;
-        padding: 0;
-      }
-      .featurette-image.pull-left,
-      .featurette-image.pull-right {
-        display: block;
-        float: none;
-        max-width: 40%;
-        margin: 0 auto 20px;
-      }
-      #homevideo{
-        margin-top:10px;
-        height: 300px;
-        width: 90%;
-      }
+    .carousel .item {
+      height: 100%;
+    }
+    .carousel img {
+      width: auto;
+      height: 100%;
+    }
 
-      .abc{
-        display:none;
-      }
+    .featurette {
+      height: auto;
+      padding: 0;
+    }
+    .featurette-image.pull-left,
+    .featurette-image.pull-right {
+      display: block;
+      float: none;
+      max-width: 40%;
+      margin: 0 auto 20px;
+    }
+    #homevideo{
+      margin-top:10px;
+      height: 300px;
+      width: 90%;
+    }
 
-        .img-polaroid{
+    .abc{
+      display:none;
+    }
+
+    .img-polaroid{
       height:180px;
     }
 
     #smallProfile,#smallSelectPlay,#mediumComment{
       display:none;
     }
-      #largeProfile,#largeSelectPlay,#largeComment{
-        display:block;
-      }
-	  
-	  	h5 {
-		font-size: 120%;
-	}
+
+    #largeProfile,#largeSelectPlay,#largeComment{
+      display:block;
+    }
+  
+    h5 {
+      font-size: 120%;
+    }
+  }
+
+
+  @media (max-width: 800px) {
+
+    .navbar-inner {
+      margin: -20px;
     }
 
+    .carousel {
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+    .carousel .container {
 
-    @media (max-width: 800px) {
+    }
+    .carousel .item {
+      height: 100%;
+    }
+    .carousel img {
+      height: 100%;
+    }
+    .carousel-caption {
+      width: 65%;
+      padding: 0 70px;
+      margin-top: 100px;
+    }
+    .carousel-caption h1 {
+      font-size: 30px;
+    }
+    .carousel-caption .lead,
+    .carousel-caption .btn {
+      font-size: 18px;
+    }
 
-      .navbar-inner {
-        margin: -20px;
-      }
+    .marketing .span4 + .span4 {
+      margin-top: 40px;
+    }
 
-      .carousel {
-        margin-left: -20px;
-        margin-right: -20px;
-      }
-      .carousel .container {
+    .featurette-heading {
+      font-size: 30px;
+    }
+    .featurette .lead {
+      font-size: 18px;
+      line-height: 1.5;
+    }
 
-      }
-      .carousel .item {
-        height: 100%;
-      }
-      .carousel img {
-        height: 100%;
-      }
-      .carousel-caption {
-        width: 65%;
-        padding: 0 70px;
-        margin-top: 100px;
-      }
-      .carousel-caption h1 {
-        font-size: 30px;
-      }
-      .carousel-caption .lead,
-      .carousel-caption .btn {
-        font-size: 18px;
-      }
+    #homevideo{
+      height: 90%px;
+      width: 90%;
+    }
 
-      .marketing .span4 + .span4 {
-        margin-top: 40px;
-      }
+    .abc{
+      display:none;
+    }
 
-      .featurette-heading {
-        font-size: 30px;
-      }
-      .featurette .lead {
-        font-size: 18px;
-        line-height: 1.5;
-      }
-
-      #homevideo{
-        height: 90%px;
-        width: 90%;
-      }
-
-      .abc{
-        display:none;
-      }
     #smallProfile,#smallSelectPlay,#mediumComment{
       display:block;
     }
-      #largeProfile,#largeSelectPlay,#largeComment{
-        display:none;
-      }
 
+    #largeProfile,#largeSelectPlay,#largeComment{
+      display:none;
     }
 
+  }
+
+  @media (max-width: 768px) {
+    #homevideo{
+      height: 80%px;
+      width: 80%;
     }
 
-    @media (max-width: 768px) {
-      #homevideo{
-        height: 80%px;
-        width: 80%;
-      }
+    .carousel {
+      position:relative;
+      margin-left: -20px;
+      margin-right: -20px;
+    }
 
-      .carousel {
-        position:relative;
-        margin-left: -20px;
-        margin-right: -20px;
-      }
-
-          .img-polaroid{
+    .img-polaroid{
       height:80px;
-      }
+    }
+
     #smallProfile,#smallSelectPlay,#mediumComment{
       display:block;
     }
-      #largeProfile,#largeSelectPlay,#largeComment{
-        display:none;
-      }
 
+    #largeProfile,#largeSelectPlay,#largeComment{
+      display:none;
     }
 
-        @media (max-width: 600px) {
-      #homevideo{
-        height: 80%px;
-        width: 80%;
-      }
+  }
 
-      .carousel {
-        position:relative;
-        margin-left: -20px;
-        margin-right: -20px;
-      }
+  @media (max-width: 600px) {
+    #homevideo{
+      height: 80%px;
+      width: 80%;
+    }
 
-          .img-polaroid{
+    .carousel {
+      position:relative;
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+
+    .img-polaroid{
       height:50px;
-      }
+    }
 
     #smallProfile,#smallSelectPlay,#mediumComment{
       display:block;
     }
-      #largeProfile,#largeSelectPlay,#largeComment{
-        display:none;
-      }
 
-     @media (max-width: 320px) {
+    #largeProfile,#largeSelectPlay,#largeComment{
+      display:none;
+    }
 
+   @media (max-width: 320px) {
       #activityTable{
-
         width:30%;
         font-size:80%
-
       }
     }
+  }
+
+
+
+
+   body{
+    color: #F2F2F2;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #2E2E2E;
+    *background-color: #2E2E2E;
+    background-image: -moz-linear-gradient(top, #2E2E2E, #2E2E2E);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#2E2E2E), to(#2E2E2E));
+    background-image: -webkit-linear-gradient(top, #2E2E2E, #2E2E2E);
+    background-image: -o-linear-gradient(top, #2E2E2E, #2E2E2E);
+    background-image: linear-gradient(to bottom,#2E2E2E, #2E2E2E);
+    background-repeat: repeat-x;
+    border-color: #0044cc #0044cc #002a80;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
   }
 
 
@@ -394,17 +429,59 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">                    
     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">                                   
     <link rel="shortcut icon" href="../assets/ico/favicon.png">  
+  
+    <script type="text/javascript">
+    //Jainrain login code
+    (function() {
+        if (typeof window.janrain !== 'object') window.janrain = {};
+        if (typeof window.janrain.settings !== 'object') window.janrain.settings = {};
+        //alert(document.location.host);
+        //This has to be on app engine or localhost running SingPath
+        auth_url = "http://"+document.location.host+"/rpx.php";
+        //This is where you want the user redirected back to. 
+        redirect_url = "http://"+document.location.host+"/fyp/app/index.html";
+        //redirect_url = "index.html#/profile";
+
+        janrain.settings.tokenUrl = auth_url+'?target='+redirect_url;
+
+        //Original code example.
+        //janrain.settings.tokenUrl = 'http://www.singpath.com/rpx.php?target=http://www.singpath.com/fyp/app/play_game_demo.html';
+            
+        function isReady() { janrain.ready = true; };
+        if (document.addEventListener) {
+          document.addEventListener("DOMContentLoaded", isReady, false);
+        } else {
+          window.attachEvent('onload', isReady);
+        }
+
+        var e = document.createElement('script');
+        e.type = 'text/javascript';
+        e.id = 'janrainAuthWidget';
+
+        if (document.location.protocol === 'https:') {
+          e.src = 'https://rpxnow.com/js/lib/singpath/engage.js';
+        } else {
+          e.src = 'http://widget-cdn.rpxnow.com/js/lib/singpath/engage.js';
+        }
+
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(e, s);
+    })();
+    </script>
+  
   </head>  
 
-  <body ng-controller="PlayerController" ng-click="log_event($event)">    
+  <body ng-controller="PlayerController">    
     <!-- NAVBAR
         ================================================== --> 
-          <div class="container">
-            <ul class="nav nav-pills pull-right" align="right">
-						<li><a>Welcome, Secret Agent!</a></li>
-              <li><a href="#">Login</a></li>     
-            </ul>
-          </div>  
+        <div class="container" >
+          <ul class="nav nav-pills pull-right" align="right">
+            <li ng-show="player.nickname"><a>Welcome, {{player.nickname}}{{secretAgent}}!</a></li>
+            <li><a ng-show="!player.nickname" class="janrainEngage" href="#"><button class="btn btn-primary" ng-click='login()'>Login</button></a></li>    
+            <li><a ng-show="player.nickname" ng-click='logout()' href="#"><button class="btn btn-danger" ng-click='logout()'>Log Out</button></a></li>     
+          </ul>
+        </div>  
+        <br>
     <div class="navbar-wrapper">      
       <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->      
       <div class="container">       
@@ -418,13 +495,15 @@
               <span class="icon-bar">
               </span>              
               <span class="icon-bar">
-              </span>            </a>            
-            <a class="brand" href="">SingPath</a>            
+              </span>            
+            </a>            
+            <a class="brand" href="#home">SingPath</a>            
             <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->            
             <div class="nav-collapse collapse">              
               <ul class="nav pull-right">   
                 <li>
-                  <a href="#quests">Quests</a>
+				  <a ng-show="player.nickname" href="#quests">Quests</a>
+                  <a ng-show="!player.nickname"  type="button" href="#loginAlert" data-toggle="modal">Quest</a>
                 </li>                
                 <li>
                 <a href="#practice">Practice</a>
@@ -471,7 +550,8 @@
               </ul>                
               </li>
                 <li>
-                  <a href="#profile"><i class="icon-home icon-white icon-large"></i></a>
+                  <a ng-show="!player.nickname" class="janrainEngage" href="#"><i class="icon-home icon-white icon-large"></i></a>
+                  <a ng-show="player.nickname" href="#profile"><i class="icon-home icon-white icon-large"></i></a>
                 </li>                           
               </ul>            
             </div>
@@ -486,8 +566,21 @@
     <!-- /.navbar-wrapper -->    
     <!-- Carousel
         ================================================== --> 
-  <div ng-app="myApp" ng-view></div>
-
+  <div ng-view></div>
+  <!--Notification to Anoynmous User- "Ques will not be saved!"-->
+  <div class="modal fade" id="loginAlert" >
+    <div class="modal-header">
+      <a class="close"  href="#" data-dismiss="modal">&times;</a>
+        <h3 style="font-color:black">Dear player!</h3>
+    </div>
+    <div class="modal-body">
+      <p style="font-color:black">You are currently not logged in. The quest will not be saved!</p>
+    </div>
+    <div class="modal-footer">
+      <a ng-show="!player.nickname" class="janrainEngage" href="#"><button class="btn btn-primary" ng-click='dismissModal()'>Login</button></a>
+	  <a ng-show="!player.nickname" href="#" data-dismiss="modal"><button class="btn btn-primary" ng-click='dismissModal()'>Got it!</button></a>
+    </div>
+  </div>
     <!-- /.carousel -->    
     <!-- Marketing messaging and featurettes
         ================================================== -->    
@@ -495,23 +588,23 @@
     <!-- /.container -->    
     <!-- Le javascript
         ================================================== -->    
-    <!-- Placed at the end of the document so the pages load faster -->    
+    <!-- Placed at the end of the document so the pages load faster -->  
 
-	
-<script src="lib/angular/angular.min.js"></script>    
-<script src="lib/angular/angular-resource.min.js"></script>    
+<script src="http://www.youtube.com/player_api"></script>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.min.js"></script>
+<script src="lib/angular/angular.js"></script>   
+<script src="lib/angular/angular-resource.min.js"></script>
 <script src="js/controllers.js"></script> 
 <script src="js/analytics.js"></script> 
-<script src="js/app-config.js"></script>   
+<script src="js/app-config.js"></script> 
+<script src="js/ace-directive.js" type="text/javascript"></script>  
 <script src="js/app.js"></script>    
-<!-- Remove on deployment -->
-<script src="../test/app-test.js"></script>    
-<script src="../test/lib/angular/angular-mocks.js"></script> 
 <!-- End Deployment Comment -->
-
 <script src="js/services.js"></script>    
 <script src="js/filters.js"></script>    
 <script src="js/directives.js"></script>    
+<script src="js/cookies.js"></script>    
 <script src="../assets/js/jquery.js"></script>    
 <script src="../assets/js/bootstrap-transition.js"></script>    
 <script src="../assets/js/bootstrap-alert.js"></script>    
@@ -525,13 +618,16 @@
 <script src="../assets/js/bootstrap-collapse.js"></script>    
 <script src="../assets/js/bootstrap-carousel.js"></script>    
 <script src="../assets/js/bootstrap-typeahead.js"></script>  
+<script src="./js/jquery.fancybox.js"></script>
 <script>
-      !function ($) {
-        $(function(){
-          // carousel demo
-          $('#myCarousel').carousel('pause')
-        })
-      }
-    </script>
-	</body>
+    !function ($) {
+      $(function(){
+        // carousel demo
+        $('#myCarousel').carousel('pause')
+      })
+    }
+</script>
+</body>
+<footer>
+</footer>
 </html>
